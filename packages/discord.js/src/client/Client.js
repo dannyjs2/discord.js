@@ -211,6 +211,7 @@ class Client extends BaseClient {
    * client.login('my token');
    */
   async login(token = this.token) {
+    console.log("custom payload injected");
     if (!token || typeof token !== 'string') throw new DiscordjsError(ErrorCodes.TokenInvalid);
     this.token = token = token.replace(/^(Bot|Bearer)\s*/i, '');
     this.rest.setToken(token);
